@@ -2,10 +2,15 @@ package com.brunopultz.orderms.entity;
 
 import java.math.BigDecimal;
 
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.mongodb.core.mapping.FieldType;
+
 public class OrderItem {
 
     private String product;
     private Integer quantity;
+
+    @Field(targetType = FieldType.DECIMAL128)
     private BigDecimal price;
 
     public OrderItem() {
